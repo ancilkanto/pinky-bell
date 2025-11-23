@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,19 +9,148 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-quicksand: var(--font-quicksand);
+  --font-inter: var(--font-inter);
+  --font-family-quicksand: var(--font-quicksand), sans-serif;
+  --font-family-inter: var(--font-inter), sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
   }
 }
 
+html {
+  background: #FFFFFF;
+}
+
 body {
-  background: var(--background);
+  background: #FFFFFF;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.highlight-bg {
+  background: linear-gradient(to right, #7F54A4, #D62A7B, #F47B39);background-image: linear-gradient(-79deg, #B30C6A 0%, #EC50A3 29%, #F8068E 44%, #F7088C 61%, #AC8A2B 100%);
+}
+
+.highlight-on-hover {
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: all 0.3s ease-in-out;
+}
+
+.highlight-on-hover:hover {
+  background: linear-gradient(to right, #7F54A4, #D62A7B, #F47B39);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.blur-background{
+  -webkit-backdrop-filter: blur(0.2rem);
+  backdrop-filter: blur(0.2rem);
+  color: var(--black);
+  background: rgba(255,255,255,0.35);
+  
+}
+header.blur-background{
+  -webkit-backdrop-filter: blur(1.25rem);
+  backdrop-filter: blur(1.25rem);
+  color: var(--black);
+  background-color: #ffffffb0;
+}
+nav.main-navigation{
+  -webkit-backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
+  color: var(--black);
+  background-color: #ffffff72;
+}
+nav.main-navigation a {
+  border-radius: 30px;
+  padding: 10px 17px;
+  
+}
+
+.active-menu-item{
+  background: #FFE5F3;
+  
+}
+.highlight-text{
+  background-image: linear-gradient(-84deg, #AC8A2B 0%, #F8068E 50%, #AC8A2B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  background-size: 150% 200%;
+  animation: gradient 15s linear infinite;
+  
+}
+
+@keyframes gradient{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.gold-text{
+  color: #AC8A2B;
+}
+.pink-text{
+  color: #F8068E;
+}
+.collage-wrapper img{
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.services-section {
+  position: relative;
+}
+
+.services-left-block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.services-list-wrapper {
+  position: relative;
+  display: grid;
+  gap: 36px;
+}
+.service-keywords-list li::after{
+  content: '/';
+  padding: 0 10px;
+  color: #aaa;
+  font-size: 18px;
+}
+.service-keywords-list li:last-child::after{
+  content: '';
+  padding: 0;
+}
+.testimonial-navigation button.cursor-pointer:hover img{
+  filter: brightness(0) invert(1);
+}
+
+.footer-top-bar-cta{
+  margin-top: calc(-1 * (var(--spacing, 0.5rem) * 12));
+}
+
+.minimal-button{
+  display: inline-flex;
+  flex-direction: column;
+}
+.minimal-button::after{
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #7F54A4, #D62A7B, #F47B39);
+  display: block;
+  transition: all 0.3s ease;
+}
+.minimal-button:hover::after{
+  width: 0;
 }
