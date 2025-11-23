@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="45px" height="27px" viewBox="0 0 45 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Hamburger</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Home-Page-V2.1-Copy" transform="translate(-1605, -59)" stroke="#222222" stroke-width="3">
+            <g id="Header" transform="translate(269.8698, 25)">
+                <g id="Hamburger" transform="translate(1337.2605, 35)">
+                    <line x1="40.5" y1="0.5" x2="15.5" y2="0.5" id="Line"></line>
+                    <line x1="40" y1="12.5" x2="-1.17905685e-13" y2="12.5" id="Line-Copy"></line>
+                    <line x1="40.5" y1="24.5" x2="15.5" y2="24.5" id="Line-Copy-2"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,76 @@
+/* Button Component Styles */
+
+.pb-button{
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 35px;
+  border-radius: 35px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font-inter);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  pointer-events: all;
+  transition: all 0.5s ease-in-out;
+}
+.pb-button img{
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-highlight {
+  /* Add your highlight button styles here */
+  background-image: linear-gradient(-84deg, #AC8A2B 0%, #F8068E 50%, #AC8A2B 100%);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  border-radius: 20px;
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+.btn-highlight:hover {
+  background-position: 100% 50%;
+}
+.btn-outline-white {
+  /* Add your outline-white button styles here */
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.btn-outline-white:hover {
+  /* Add your outline-white button styles here */
+  color: #222222;
+  background: #fff;
+}
+.btn-outline-white:hover img {
+  filter: invert(1);
+}
+.btn-outline-black {
+  /* Add your outline-black button styles here */
+  border: 1px solid #222222;
+  color: #222222;
+}
+.btn-outline-black:hover {
+  /* Add your outline-black button styles here */
+  color: #ffff;
+  background: #222222;
+}
+.btn-outline-black:hover img {
+  filter: brightness(100);
+}
+
+.btn-outline-pink {
+  /* Add your outline-pink button styles here */
+  border: 1px solid #F8068E;
+  color: #F8068E;
+}
+.btn-outline-pink:hover {
+  /* Add your outline-pink button styles here */
+  color: #ffff;
+  background: #F8068E;
+}
+.btn-outline-pink:hover img {
+  filter: brightness(100);
+}
+

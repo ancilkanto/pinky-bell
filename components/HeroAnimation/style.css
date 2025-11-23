@@ -1,0 +1,199 @@
+/* HeroAnimation Component Styles */
+
+.hero-banner-content-wrapper h1 {
+  /* Add your styles here */
+
+}
+.hero-banner-content-wrapper h1 span{
+  display: inline-block;
+
+}
+
+.highlightText {
+  /* Add your styles here */
+}
+
+.statistic-item{
+  border-right: 1px solid #111111;
+  border-left: 1px solid #111111;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(5rem);
+  backdrop-filter: blur(5rem);
+  background-color: #ffffff72;  
+}
+
+/* Explosion Animation Container */
+.big-cta__explosions-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Explosion Animation Keyframes */
+@keyframes drawLine {
+  0% {
+    transform: scaleY(0) translateY(0);
+    opacity: 0;
+    transform-origin: top center;
+  }
+  10% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1) translateY(-300%);
+    opacity: 0;
+    transform-origin: top center;
+  }
+}
+
+@keyframes explodePulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Explosion Element Base Styles */
+.explosion-animation-element {
+  border-radius: 50%;
+  display: none;
+  height: 80px;
+  overflow: visible;
+  width: 80px;
+  position: absolute;
+  --animation-speed: 1.5s;
+  --explosion-x: 50%;
+  --explosion-y: 50%;
+  left: var(--explosion-x);
+  top: var(--explosion-y);
+  transform: translate(-50%, -50%);
+  animation: explodePulse var(--animation-speed) ease-out;
+}
+
+.explosion-animation-element[style*="display: block"] {
+  display: block !important;
+}
+
+.explosion-animation-element__box {
+  align-items: flex-start;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+/* Line Outer Container - Positioned in 8 directions */
+.explosion-animation-element__line-outer {
+  align-items: flex-end;
+  display: flex;
+  height: 50%;
+  position: absolute;
+  transform-origin: bottom center;
+  width: 2px;
+  left: 50%;
+  bottom: 0;
+  margin-left: -1px;
+}
+
+.explosion-animation-element__line-outer:first-child {
+  transform: rotate(0deg);
+}
+
+.explosion-animation-element__line-outer:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.explosion-animation-element__line-outer:nth-child(3) {
+  transform: rotate(90deg);
+}
+
+.explosion-animation-element__line-outer:nth-child(4) {
+  transform: rotate(135deg);
+}
+
+.explosion-animation-element__line-outer:nth-child(5) {
+  transform: rotate(180deg);
+}
+
+.explosion-animation-element__line-outer:nth-child(6) {
+  transform: rotate(225deg);
+}
+
+.explosion-animation-element__line-outer:nth-child(7) {
+  transform: rotate(270deg);
+}
+
+.explosion-animation-element__line-outer:nth-child(8) {
+  transform: rotate(315deg);
+}
+
+/* Individual Lines with Staggered Animation */
+.explosion-animation-element__line {
+  animation-duration: var(--animation-speed, 1.5s);
+  animation-name: drawLine;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  height: 35px;
+  transform: scaleY(0) translateY(0);
+  transform-origin: top center;
+  width: 4px;
+  border-radius: 2px;
+}
+
+/* Staggered delays for each line */
+.explosion-animation-element__line-outer:nth-child(1) .explosion-animation-element__line {
+  animation-delay: 0s;
+}
+
+.explosion-animation-element__line-outer:nth-child(2) .explosion-animation-element__line {
+  animation-delay: 0.05s;
+}
+
+.explosion-animation-element__line-outer:nth-child(3) .explosion-animation-element__line {
+  animation-delay: 0.1s;
+}
+
+.explosion-animation-element__line-outer:nth-child(4) .explosion-animation-element__line {
+  animation-delay: 0.15s;
+}
+
+.explosion-animation-element__line-outer:nth-child(5) .explosion-animation-element__line {
+  animation-delay: 0.2s;
+}
+
+.explosion-animation-element__line-outer:nth-child(6) .explosion-animation-element__line {
+  animation-delay: 0.25s;
+}
+
+.explosion-animation-element__line-outer:nth-child(7) .explosion-animation-element__line {
+  animation-delay: 0.3s;
+}
+
+.explosion-animation-element__line-outer:nth-child(8) .explosion-animation-element__line {
+  animation-delay: 0.35s;
+}
+
+/* Color Variants */
+.explosion-animation-element--dark .explosion-animation-element__line {
+  background-color: #F8068E;
+}
+
+.explosion-animation-element--light .explosion-animation-element__line {
+  background-color: #F8068E;
+}
