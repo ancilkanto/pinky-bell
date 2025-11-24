@@ -22,7 +22,7 @@ function TestimonialItem(
       style={style}
       className="bg-[#EDEDED] relative rounded-[20px] py-12 px-8 min-h-[320px] flex flex-col justify-between h-full"
     >
-      <div className="absolute top-[-30px] left-[50px] w-[70px] h-[57px] z-10">
+      <div className="absolute top-[-30px] left-[50px] w-[70px] h-[57px] z-10 max-[768px]:top-[-10px] max-[768px]:left-[30px] max-[768px]:w-[50px] max-[768px]:h-[40px]">
         <Image
           src="/quote-pink.svg"
           alt="Quote Pink"

@@ -55,12 +55,29 @@ export default function ServicesSection() {
   const serviceRefs = useRef<(HTMLDivElement | null)[]>([]);
   const swiperRef = useRef<any>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const updateIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    updateIsMobile();
+    window.addEventListener("resize", updateIsMobile);
+
+    return () => {
+      window.removeEventListener("resize", updateIsMobile);
+    };
+  }, []);
 
   useEffect(() => {
     let scrollTriggerInstance: any = null;
     let resizeHandler: (() => void) | null = null;
 
     async function init() {
+      if (window.innerWidth < 768) {
+        return;
+      }
       const { default: gsap } = await import("gsap");
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
       gsap.registerPlugin(ScrollTrigger);
@@ -139,14 +156,21 @@ export default function ServicesSection() {
   }, [activeIndex]);
 
   return (
-    <div className="bg-white py-[120px]" ref={sectionRef}>
-      <div className="max-w-[1380px] mx-auto w-full">
+    <div className="bg-white py-[120px] max-[768px]:py-[100px]" ref={sectionRef}>
+      <div className="max-w-[1380px] mx-auto w-full px-0 max-[1400px]:px-8 max-[768px]:px-10">
         <div className="services-section grid grid-cols-12 gap-10 items-start relative">
-          <div className="col-span-6">
+          <div className="col-span-6 max-[768px]:col-span-12">
             <div ref={leftColumnRef} className="relative min-h-full">
               <div ref={leftBlockRef} className="services-left-block text-left pr-[95px]">
-                <SectionTitle subTitle="We Do" title={servicesData[activeIndex]?.title ?? ""} />
-                <div className="service-image-wrapper overflow-hidden rounded-[20px]">
+                <SectionTitle
+                  subTitle="We Do"
+                  title={
+                    isMobile
+                      ? "Design, Development & Marketing"
+                      : servicesData[activeIndex]?.title ?? "Design, Development & Marketing"
+                  }
+                />
+                <div className="service-image-wrapper overflow-hidden rounded-[20px] max-[768px]:hidden">
                   <Swiper
                     modules={[EffectFade]}
                     effect="fade"
@@ -177,8 +201,8 @@ export default function ServicesSection() {
               </div>
             </div>
           </div>
-          <div className="col-span-6">
-            <div className="services-list-wrapper grid gap-6 pt-[120px]">
+          <div className="col-span-6 max-[768px]:col-span-12">
+            <div className="services-list-wrapper grid gap-6 pt-[120px] max-[768px]:pt-[0px]">
               {servicesData.map((service, index) => (
                 <div
                   key={service.title}
@@ -194,7 +218,7 @@ export default function ServicesSection() {
                     imageUrl={service.imageUrl}
                     className={`transition-opacity duration-1000 ${
                       index === activeIndex ? "opacity-100" : "opacity-20"
-                    }`}
+                    } ${index === servicesData.length - 1 ? "max-[768px]:pb-0" : "max-[768px]:pb-[100px]"}`}
                   >
                     {service.description}
                   </ServiceItem>

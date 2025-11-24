@@ -82,9 +82,9 @@ export default function ImageTiles({ rows = 3 }: ImageTilesProps) {
   }, [rows]);
 
   return (
-    <div ref={containerRef} className="w-full h-[80vh] relative bg-white py-0 overflow-hidden">
-      <div className="overlay-shadow absolute top-0 left-0 w-full h-[80vh] shadow-[inset_0_0_100px_40px_rgba(0,0,0,0.75)] z-[10]"></div>
-      <div className="relative top-[50%] left-[50%] z-[8] translate-x-[-50%] translate-y-[-50%] w-[110%] flex flex-col gap-8 rotate-[20deg]">
+    <div ref={containerRef} className="w-full h-[80vh] max-[768px]:h-[40vh] max-[1024px]:h-[60vh] relative bg-white py-0 overflow-hidden">
+      <div className="overlay-shadow absolute top-0 left-0 w-full h-[80vh] max-[768px]:h-[40vh] max-[1024px]:h-[60vh] shadow-[inset_0_0_100px_40px_rgba(0,0,0,0.75)] z-[10]"></div>
+      <div className="relative top-[50%] left-[50%] z-[8] translate-x-[-50%] translate-y-[-50%] w-[110%] flex flex-col gap-8 max-[768px]:gap-2 max-[1024px]:gap-4 rotate-[20deg]">
         {Array.from({ length: rows }).map((_, rowIndex) => {
           const sliceStart = rowIndex * columns;
           const rowTiles = tiles.slice(sliceStart, sliceStart + columns);
@@ -95,12 +95,12 @@ export default function ImageTiles({ rows = 3 }: ImageTilesProps) {
               ref={(el) => {
                 rowRefs.current[rowIndex] = el;
               }}
-              className={`grid grid-cols-4 gap-6 md:grid-cols-4 sm:grid-cols-2 ${rowIndex%2 != 0 ? "pl-[10px] odd" : "even"}`}
+              className={`grid grid-cols-4 gap-6 max-[768px]:gap-2 max-[1024px]:gap-4 ${rowIndex%2 != 0 ? "pl-[10px] odd" : "even"}`}
             >
               {rowTiles.map((tile) => (
                 <div
                   key={tile.id}
-                className="group relative h-[275px] w-[440px] overflow-hidden rounded-[24px] bg-gray-100 shadow-[0_20px_45px_rgba(15,23,42,0.08)] max-w-full"
+                className="group relative h-[275px] w-[440px] max-[768px]:h-[120px] max-[768px]:w-[200px] max-[1024px]:h-[180px] max-[1024px]:w-[300px] overflow-hidden rounded-[24px] bg-gray-100 shadow-[0_20px_45px_rgba(15,23,42,0.08)] max-w-full"
                 >
                   <Image
                     src={tile.src}

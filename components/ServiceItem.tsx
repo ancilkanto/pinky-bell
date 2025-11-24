@@ -24,7 +24,7 @@ export default function ServiceItem({
 }: ServiceItemProps) {
   return (
     <div
-      className={`group relative pb-[25vh] transition-all duration-300 ${className}`}
+      className={`group relative pb-[25vh] transition-all duration-300  max-[768px]:opacity-100 ${className}`}
       data-service-title={title}
       data-service-image={imageUrl}
     >

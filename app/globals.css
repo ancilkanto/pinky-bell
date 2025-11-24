@@ -63,6 +63,14 @@ header.blur-background{
   color: var(--black);
   background-color: #ffffffb0;
 }
+@media (max-width: 1024px) {
+  header{
+    -webkit-backdrop-filter: blur(1.25rem);
+    backdrop-filter: blur(1.25rem);
+    color: var(--black);
+    background-color: #ffffff82;
+  }
+}
 nav.main-navigation{
   -webkit-backdrop-filter: blur(0.5rem);
   backdrop-filter: blur(0.5rem);
