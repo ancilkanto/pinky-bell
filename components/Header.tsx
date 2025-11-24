@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full bg-transparent z-[100]">
-      <div className="max-w-[1380px] mx-auto w-full relative flex items-center justify-between py-6">
+      <div className="max-w-[1380px] mx-auto w-full relative flex items-center justify-between py-6 px-0 max-[1400px]:px-8 max-[768px]:px-10 max-[1024px]:py-2">
         {/* Part 1: Logo */}
         <div className="flex items-center">
         <a href="/" className="flex items-center">
@@ -13,7 +13,7 @@ export default function Header() {
             alt="PinkyBell Logo"
             width={130}
             height={95}
-            className="h-[95px] w-auto"
+            className="h-[95px] w-auto max-[768px]:h-[70px] max-[1024px]:h-[60px]"
             style={{ maxHeight: "95px" }}
             priority
           />
@@ -21,7 +21,7 @@ export default function Header() {
         </div>
 
         {/* Part 2: Main Navigation - Centered on screen */}
-        <div className="fixed left-1/2 transform -translate-x-1/2">
+        <div className="fixed left-1/2 transform -translate-x-1/2 max-[1080px]:hidden">
           <Navigation />
         </div>
 

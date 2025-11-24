@@ -4,7 +4,6 @@ import { ReactNode, useEffect, useRef } from "react";
 
 interface IntermidiateParallaxSectionProps {
   imageUrl: string;
-  height?: number;
   speed?: number;
   className?: string;
   children?: ReactNode;
@@ -13,7 +12,6 @@ interface IntermidiateParallaxSectionProps {
 
 export default function IntermidiateParallaxSection({
   imageUrl,
-  height = 660,
   speed = 0.25,
   className = "",
   children,
@@ -24,14 +22,21 @@ export default function IntermidiateParallaxSection({
 
   useEffect(() => {
     let rafId: number;
+    let parallaxEnabled = false;
+
+    const resetTransform = () => {
+      if (backgroundRef.current) {
+        backgroundRef.current.style.transform = "translate3d(0, 0, 0) scale(1)";
+      }
+    };
 
     const updateParallax = () => {
-      if (!containerRef.current || !backgroundRef.current) return;
+      if (!parallaxEnabled || !containerRef.current || !backgroundRef.current) return;
 
       const rect = containerRef.current.getBoundingClientRect();
       const viewportHeight =
         window.innerHeight || document.documentElement.clientHeight;
-      const distanceFromCenter = rect.top + (rect.height/2) - viewportHeight / 2;
+      const distanceFromCenter = rect.top + rect.height / 2 - viewportHeight / 2;
       const translateY = -distanceFromCenter * speed;
       const clampedTranslateY = Math.max(
         -rect.height * 0.4,
@@ -46,10 +51,35 @@ export default function IntermidiateParallaxSection({
       rafId = requestAnimationFrame(updateParallax);
     };
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    updateParallax();
+    const enableParallax = () => {
+      if (parallaxEnabled) return;
+      parallaxEnabled = true;
+      window.addEventListener("scroll", onScroll, { passive: true });
+      updateParallax();
+    };
+
+    const disableParallax = () => {
+      if (!parallaxEnabled) return;
+      parallaxEnabled = false;
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(rafId);
+      resetTransform();
+    };
+
+    const handleResize = () => {
+      if (window.innerWidth <= 1024) {
+        disableParallax();
+        resetTransform();
+      } else {
+        enableParallax();
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
     return () => {
+      window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", onScroll);
       cancelAnimationFrame(rafId);
     };
@@ -58,8 +88,7 @@ export default function IntermidiateParallaxSection({
   return (
     <section
       ref={containerRef}
-      className={`relative overflow-hidden intermidiate-parallax-section ${className}`}
-      style={{ minHeight: `${height}px` }}
+      className={`relative overflow-hidden intermidiate-parallax-section ${className}`}    
     >
       <div
         ref={backgroundRef}

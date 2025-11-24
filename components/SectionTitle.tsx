@@ -15,7 +15,7 @@ export default function SectionTitle({ title, subTitle }: SectionTitleProps) {
         </h4>
       ) : null}
       <h2
-        className="text-[40px] highlight-text font-quicksand font-normal mb-0 font-regular"
+        className="text-[40px] highlight-text font-quicksand font-normal mb-0 font-regular max-[768px]:text-[32px] max-[768px]:leading-[42px]"
         style={{ fontFamily: "var(--font-quicksand), sans-serif", lineHeight: "1.2" }}
       >
         {title}

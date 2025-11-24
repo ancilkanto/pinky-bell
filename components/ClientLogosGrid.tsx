@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 type ClientLogo = {
@@ -47,19 +48,37 @@ const Card = ({ logo }: { logo: ClientLogo }) => (
 );
 
 export default function ClientLogosGrid({ columns = 5 }: ClientLogosGridProps) {
-  const rows = CLIENT_LOGOS.reduce<ClientLogo[][]>((acc, logo, index) => {
-    if (index % columns === 0) acc.push([]);
-    acc[acc.length - 1].push(logo);
-    return acc;
+  const [isLargeScreen, setIsLargeScreen] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (typeof window === "undefined") return;
+      setIsLargeScreen(window.innerWidth > 1120);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
+  const rows = isLargeScreen
+    ? CLIENT_LOGOS.reduce<ClientLogo[][]>((acc, logo, index) => {
+        if (index % columns === 0) acc.push([]);
+        acc[acc.length - 1].push(logo);
+        return acc;
+      }, [])
+    : [CLIENT_LOGOS];
+
   return (
-    <div className="flex flex-col gap-8 py-10">
+    <div className="flex flex-col gap-8 py-10 max-[768px]:gap-4 max-[768px]:py-4 ">
       {rows.map((row, rowIndex) => {
         return (
           <div
             key={`row-${rowIndex}`}
-            className={`flex flex-wrap gap-8 justify-center`}
+            className={`flex flex-wrap gap-8 max-[768px]:gap-4 justify-center`}
           >
             {row.map((client) => (
               <Card key={client.id} logo={client} />

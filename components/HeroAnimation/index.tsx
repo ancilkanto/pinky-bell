@@ -209,7 +209,7 @@ export default function HeroAnimation() {
   return (
     <section
       ref={containerRef}
-      className={`relative w-full h-screen items-center justify-center overflow-visible pt-[240px] transition-colors duration-300 ${isMounted ? 'bg-black' : 'bg-white'}`}
+      className={`relative w-full h-screen max-[1024px]:h-auto max-[1024px]:pb-[100px] items-center justify-center overflow-visible pt-[240px] transition-colors duration-300 ${isMounted ? 'bg-black' : 'bg-white'}`}
       style={!isMounted ? { backgroundColor: '#FFFFFF' } : undefined}
       aria-label="Hero animation"
     >      
@@ -280,40 +280,40 @@ export default function HeroAnimation() {
             </div>
         </div>
         <div className="relative z-10 pointer-events-none mx-auto flex max-w-[1385px] flex-col items-center gap-6 text-center text-black hero-banner-content-wrapper">
-            <h1 className="text-[75px] leading-[95px] display-flex flex-col items-center justify-center" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 400 }}>
+            <h1 className="text-[75px] max-[1380px]:text-[50px] max-[1380px]:leading-[65px] max-[1080px]:text-[40px] max-[1080px]:leading-[55px] leading-[95px] display-flex flex-col items-center justify-center" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 400 }}>
                 <span>Oman Web & Tech</span>
                 <br />
                 <span ref={textImageContainerRef} className="highlight-text">
                     Award Winning &nbsp;
                     <span ref={imageRef} className="inline-block relative">
-                        <Image src="/exitement.png" alt="Exitement" width={75} height={75} className="inline-block" />
+                        <Image src="/exitement.png" alt="Exitement" width={75} height={75} className="inline-block h-auto w-[75px] max-[1380px]:w-[60px] max-[768px]:w-[50px]" />
                     </span>
                 </span>
                 <br />
                 <span>Web Design Company</span>                
             </h1>
-            <p className="text-[17px] leading-[27px] text-gray-500 text-center" style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, maxWidth: '625px' }}>
+            <p className="text-[17px] leading-[27px] max-[768px]:text-[15px] max-[768px]:leading-[25px] max-[768px]:px-8 text-gray-500 text-center" style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, maxWidth: '625px' }}>
                 We are an Oman Web & Tech Award Winning Web Design Company twith clients in USA, UK, Canada, Oman, UAE, Portugal, Saudi Arabia, Bahrain, Kuwait, Algeria, Australia and India.
             </p>
             <Button btnStyle="highlight" href="#contact">
               Contact Us
             </Button>
-            <ul className="statistics-wrapper max-w-[1380px]max-w-[1380px] mx-auto w-full relative flex items-center justify-between pt-[135px]">
-                <li className="statistic-item flex flex-row items-center py-2 px-6">
-                    <div className="statistic-value gold-text text-[36px] pr-[20px]" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 600 }}>17+</div>
-                    <div className="statistic-label text-gray-700 text-[16px] leading-[26px]" style={{ fontFamily: 'var(--font-inter)', fontWeight: 500 }}>Years of Experience</div>
+            <ul className="statistics-wrapper max-w-[1380px] mx-auto w-full relative flex items-center justify-between pt-[135px] max-[1420px]:px-8 max-[768px]:pt-[100px] max-[890px]:grid max-[890px]:grid-cols-2 max-[890px]:gap-6 max-[520px]:grid-cols-2 ">
+                <li className="statistic-item flex flex-row items-center py-2 px-6 max-[1140px]:px-4 max-[890px]:justify-center">
+                    <div className="statistic-value gold-text text-[36px] pr-[20px] max-[520px]:pr-[12px] max-[1380px]:text-[30px] max-[1140px]:text-[22px]" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 600 }}>17+</div>
+                    <div className="statistic-label text-gray-700 text-[16px] leading-[26px] max-[1380px]:text-[14px] max-[1140px]:text-[12px]" style={{ fontFamily: 'var(--font-inter)', fontWeight: 500 }}>Years of Experience</div>
                 </li>
-                <li className="statistic-item flex flex-row items-center py-2 px-6">
-                    <div className="statistic-value gold-text text-[36px] pr-[20px]" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 600 }}>700+</div>
-                    <div className="statistic-label text-gray-700 text-[16px] leading-[26px]" style={{ fontFamily: 'var(--font-inter)', fontWeight: 500 }}>Successful Projects</div>
+                <li className="statistic-item flex flex-row items-center py-2 px-6 max-[1140px]:px-4 max-[890px]:justify-center">
+                    <div className="statistic-value gold-text text-[36px] pr-[20px] max-[520px]:pr-[12px] max-[1380px]:text-[30px] max-[1140px]:text-[22px]" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 600 }}>700+</div>
+                    <div className="statistic-label text-gray-700 text-[16px] leading-[26px] max-[1380px]:text-[14px] max-[1140px]:text-[12px]" style={{ fontFamily: 'var(--font-inter)', fontWeight: 500 }}>Successful Projects</div>
                 </li>
-                <li className="statistic-item flex flex-row items-center py-2 px-6">
-                    <div className="statistic-value gold-text text-[36px] pr-[20px]" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 600 }}>500+</div>
-                    <div className="statistic-label text-gray-700 text-[16px] leading-[26px]" style={{ fontFamily: 'var(--font-inter)', fontWeight: 500 }}>Happy Clients</div>
+                <li className="statistic-item flex flex-row items-center py-2 px-6 max-[1140px]:px-4 max-[890px]:justify-center">
+                    <div className="statistic-value gold-text text-[36px] pr-[20px] max-[520px]:pr-[12px] max-[1380px]:text-[30px] max-[1140px]:text-[22px]" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 600 }}>500+</div>
+                    <div className="statistic-label text-gray-700 text-[16px] leading-[26px] max-[1380px]:text-[14px] max-[1140px]:text-[12px]" style={{ fontFamily: 'var(--font-inter)', fontWeight: 500 }}>Happy Clients</div>
                 </li>
-                <li className="statistic-item flex flex-row items-center py-2 px-6">
-                    <div className="statistic-value gold-text text-[36px] pr-[20px]" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 600 }}>4.9/5.0</div>
-                    <div className="statistic-label text-gray-700 text-[16px] leading-[26px]" style={{ fontFamily: 'var(--font-inter)', fontWeight: 500 }}>Client Rating</div>
+                <li className="statistic-item flex flex-row items-center py-2 px-6 max-[1140px]:px-4 max-[890px]:justify-center">
+                    <div className="statistic-value gold-text text-[36px] pr-[20px] max-[520px]:pr-[12px] max-[1380px]:text-[30px] max-[1140px]:text-[22px]" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 600 }}>4.9/5.0</div>
+                    <div className="statistic-label text-gray-700 text-[16px] leading-[26px] max-[1380px]:text-[14px] max-[1140px]:text-[12px]" style={{ fontFamily: 'var(--font-inter)', fontWeight: 500 }}>Client Rating</div>
                 </li>
                 
             </ul>
