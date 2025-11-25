@@ -8,6 +8,7 @@ import FooterContactInfo from './FooterContactInfo';
 import GoogleRatingWidget from './GoogleRatingWidget';
 import { useEffect, useRef, useState } from 'react';
 import { getLocalePath } from '@/utils/locale';
+import GetAQuote from './GetAQuote';
 
 export default function Footer({ currentLang }: { currentLang: Locale }) {
   const t = translations[currentLang];
@@ -39,7 +40,7 @@ export default function Footer({ currentLang }: { currentLang: Locale }) {
         <div className="footer-top-bar-adjuster bg-white" style={{ height: `${adjusterHeight}px` }}>
             {/* Do Not Remove This Div */}
         </div>
-        <div ref={ctaRef} className="mx-auto max-w-[1380px] highlight-bg py-12 rounded-[20px] footer-top-bar-cta py-[70px] px-[70px] px-0 max-[1400px]:px-[50px] max-[1400px]:py-[50px] max-[1400px]:max-w-[1300px] max-[1310px]:max-w-[1200px] max-[1220px]:max-w-[1000px] max-[1080px]:max-w-[800px] max-[768px]:max-w-[600px] max-[620px]:max-w-[480px] max-[620px]:px-[30px]" style={{ marginTop: `${adjusterHeight * -1}px` }}>
+        <div ref={ctaRef} className="mx-auto max-w-[1380px] highlight-bg py-12 rounded-[20px] footer-top-bar-cta py-[70px] px-[70px] px-0 max-[1400px]:px-[50px] max-[1400px]:py-[50px] max-[1400px]:max-w-[1300px] max-[1310px]:max-w-[1200px] max-[1220px]:max-w-[1000px] max-[1080px]:max-w-[800px] max-[768px]:max-w-[600px] max-[620px]:max-w-[480px] max-[620px]:px-[30px] max-[520px]:max-w-[calc(100vw-20px)]" style={{ marginTop: `${adjusterHeight * -1}px` }}>
             <div className="grid grid-cols-12 gap-8 align-items-center max-[768px]:grid-cols-1 max-[768px]:gap-4">
                 <div className="col-span-7 max-[768px]:col-span-12">
                     <h3 className="text-white text-[36px] font-regular line-height-[36px] leading-tight pb-6 max-w-[650px] max-[1440px]:text-[30px] max-[1440px]:max-w-[550px] max-[620px]:text-[24px] max-[620px]:max-w-[450px]" style={{ fontFamily: "var(--font-quicksand), sans-serif" }}>
@@ -72,8 +73,8 @@ export default function Footer({ currentLang }: { currentLang: Locale }) {
         <div className="mx-auto max-w-[1380px] py-16 px-0 max-[1400px]:px-8 max-[768px]:px-10">
             <div className="grid grid-cols-12 gap-8 max-[768px]:grid-cols-1 max-[768px]:gap-4">
                 {/* About Section */}
-                <div className="col-span-3 h-full flex flex-col gap-10 max-[1180px]:col-span-4 max-[768px]:col-span-12 max-[768px]:gap-4 max-[768px]:flex-row max-[768px]:justify-between max-[768px]:border-b-1 max-[768px]:border-pink-300 max-[768px]:pb-8">
-                    <div className="align-start w-full max-[768px]:w-1/2">
+                <div className="col-span-3 h-full flex flex-col gap-10 max-[1180px]:col-span-4 max-[768px]:col-span-12 max-[768px]:gap-4 max-[768px]:flex-row max-[768px]:justify-between max-[768px]:border-b-1 max-[768px]:border-pink-300 max-[768px]:pb-8 max-[520px]:flex-col max-[520px]:justify-center">
+                    <div className="align-start w-full max-[768px]:w-1/2 max-[520px]:w-full max-[520px]:flex max-[520px]:justify-center ">
                         <Link href="/" className="">
                             <Image
                                 src="/logo-large.png"
@@ -85,7 +86,7 @@ export default function Footer({ currentLang }: { currentLang: Locale }) {
                             />
                         </Link>
                     </div>
-                    <div className="google-rating-widget-wrapper align-end w-full max-[768px]:flex max-[768px]:justify-end max-[768px]:items-end max-[768px]:w-1/2">
+                    <div className="google-rating-widget-wrapper align-end w-full max-[768px]:flex max-[768px]:justify-end max-[768px]:items-end max-[768px]:w-1/2 max-[520px]:w-full max-[520px]:justify-center">
                         <GoogleRatingWidget rating={4.9} />
                     </div>
                 </div>
@@ -241,7 +242,7 @@ export default function Footer({ currentLang }: { currentLang: Locale }) {
             </div>
         </div>
         {/* Bottom Bar */}
-        <div className="py-6 bg-white ">
+        <div className="py-6 bg-white relative z-[210]">
             <div className="mx-auto max-w-[1380px] px-0 max-[1400px]:px-8 max-[768px]:px-10">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-gray-800 text-sm">
@@ -267,6 +268,7 @@ export default function Footer({ currentLang }: { currentLang: Locale }) {
                 </div>
             </div>
         </div>
+        <GetAQuote />
     </footer>
   );
 }

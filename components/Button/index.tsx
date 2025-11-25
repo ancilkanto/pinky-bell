@@ -30,6 +30,9 @@ export default function Button({
         case 'outline-pink':
             arrowIcon = '/arrow-right-pink.svg';
             break;
+        case 'outline-pink-small':
+            arrowIcon = '/arrow-right-pink.svg';
+            break;
         default:
             arrowIcon = '/arrow-right-white.svg';
             break;
