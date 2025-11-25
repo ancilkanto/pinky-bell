@@ -298,21 +298,21 @@ export default function HeroAnimation() {
             <Button btnStyle="highlight" href="#contact">
               Contact Us
             </Button>
-            <ul className="statistics-wrapper absolute bottom-[-75px] max-[1440px]:bottom-[-50px]  left-0 right-0 max-w-[1380px] mx-auto w-full relative flex items-center justify-between max-[1420px]:px-8 max-[768px]:pt-[100px] max-[890px]:grid max-[890px]:grid-cols-2 max-[890px]:gap-6 max-[520px]:grid-cols-2 ">
+            <ul className="statistics-wrapper absolute bottom-[-75px] max-[1440px]:bottom-[-50px]  left-0 right-0 max-w-[1380px] mx-auto w-full relative flex items-center justify-between max-[1420px]:px-8 max-[768px]:pt-[100px] max-[890px]:grid max-[890px]:grid-cols-2 max-[890px]:gap-6 max-[520px]:grid-cols-2 max-[520px]:gap-4">
                 <li className="statistic-item flex flex-row items-center py-2 px-6 max-[1140px]:px-4 max-[890px]:justify-center">
-                    <div className="statistic-value gold-text text-[36px] pr-[20px] max-[520px]:pr-[12px] max-[1380px]:text-[30px] max-[1140px]:text-[22px]" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 600 }}>17+</div>
+                    <div className="statistic-value gold-text text-[36px] pr-[20px] max-[520px]:pr-[8px] max-[520px]:text-[18px] max-[1380px]:text-[30px] max-[1140px]:text-[22px]" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 600 }}>17+</div>
                     <div className="statistic-label text-gray-700 text-[16px] leading-[26px] max-[1380px]:text-[14px] max-[1140px]:text-[12px] max-[768px]:text-left max-[768px]:leading-[18px] max-[768px]:pl-[10px]" style={{ fontFamily: 'var(--font-inter)', fontWeight: 500 }}>Years of Experience</div>
                 </li>
                 <li className="statistic-item flex flex-row items-center py-2 px-6 max-[1140px]:px-4 max-[890px]:justify-center">
-                    <div className="statistic-value gold-text text-[36px] pr-[20px] max-[520px]:pr-[12px] max-[1380px]:text-[30px] max-[1140px]:text-[22px]" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 600 }}>700+</div>
+                    <div className="statistic-value gold-text text-[36px] pr-[20px] max-[520px]:pr-[8px] max-[520px]:text-[18px] max-[1380px]:text-[30px] max-[1140px]:text-[22px]" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 600 }}>700+</div>
                     <div className="statistic-label text-gray-700 text-[16px] leading-[26px] max-[1380px]:text-[14px] max-[1140px]:text-[12px] max-[768px]:text-left max-[768px]:leading-[18px] max-[768px]:pl-[10px]" style={{ fontFamily: 'var(--font-inter)', fontWeight: 500 }}>Successful Projects</div>
                 </li>
                 <li className="statistic-item flex flex-row items-center py-2 px-6 max-[1140px]:px-4 max-[890px]:justify-center">
-                    <div className="statistic-value gold-text text-[36px] pr-[20px] max-[520px]:pr-[12px] max-[1380px]:text-[30px] max-[1140px]:text-[22px]" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 600 }}>500+</div>
+                    <div className="statistic-value gold-text text-[36px] pr-[20px] max-[520px]:pr-[8px] max-[520px]:text-[18px] max-[1380px]:text-[30px] max-[1140px]:text-[22px]" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 600 }}>500+</div>
                     <div className="statistic-label text-gray-700 text-[16px] leading-[26px] max-[1380px]:text-[14px] max-[1140px]:text-[12px] max-[768px]:text-left max-[768px]:leading-[18px] max-[768px]:pl-[10px]" style={{ fontFamily: 'var(--font-inter)', fontWeight: 500 }}>Happy Clients</div>
                 </li>
                 <li className="statistic-item flex flex-row items-center py-2 px-6 max-[1140px]:px-4 max-[890px]:justify-center">
-                    <div className="statistic-value gold-text text-[36px] pr-[20px] max-[520px]:pr-[12px] max-[1380px]:text-[30px] max-[1140px]:text-[22px]" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 600 }}>4.9/5.0</div>
+                    <div className="statistic-value gold-text text-[36px] pr-[20px] max-[520px]:pr-[8px] max-[520px]:text-[18px] max-[1380px]:text-[30px] max-[1140px]:text-[22px]" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 600 }}>4.9/5.0</div>
                     <div className="statistic-label text-gray-700 text-[16px] leading-[26px] max-[1380px]:text-[14px] max-[1140px]:text-[12px] max-[768px]:text-left max-[768px]:leading-[18px] max-[768px]:pl-[10px]" style={{ fontFamily: 'var(--font-inter)', fontWeight: 500 }}>Client Rating</div>
                 </li>
                 
