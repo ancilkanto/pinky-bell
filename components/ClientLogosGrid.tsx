@@ -44,7 +44,7 @@ type ClientLogosGridProps = {
 };
 
 const Card = ({ logo }: { logo: ClientLogo }) => (
-  <div className="flex items-center justify-center bg-white border border-gray-100 rounded-[20px] px-6 py-4 h-[120px] w-[200px] shadow-[0_15px_45px_rgba(18,25,51,0.05)]">
+  <div className="client-logo-card flex items-center justify-center bg-white border border-gray-100 rounded-[20px] px-6 py-4 h-[120px] w-[200px] shadow-[0_15px_45px_rgba(18,25,51,0.05)]">
     <div className="relative w-full h-full">
       <Image
         src={logo.logo}
@@ -84,8 +84,27 @@ export default function ClientLogosGrid({ columns = 5 }: ClientLogosGridProps) {
             --grid-gap: 1.5rem;
           }
         }
+        @media (max-width: 480px) {
+          .client-logos-grid {
+            --columns: 2;
+            --grid-gap: 1rem;
+          }
+        }
+        @media (max-width: 400px) {
+          .client-logos-grid {
+            --columns: 1;
+            --grid-gap: 1rem;
+          }
+          .client-logos-grid .client-logo-card {
+            display: none;
+          }
+          .client-logos-grid .client-logo-card:nth-child(-n+3) {
+            display: flex;
+          }
+        }
+        
       `}</style>
-      <div className="client-logos-grid grid py-10 max-[768px]:py-4 justify-center">
+      <div className="client-logos-grid grid py-10 max-[768px]:py-4 justify-center w-full overflow-x-hidden">
         {CLIENT_LOGOS.map((client) => (
           <Card key={client.id} logo={client} />
         ))}

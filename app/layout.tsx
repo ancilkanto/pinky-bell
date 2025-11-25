@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ background: '#FFFFFF' }}>
       <body
-        className={`${quicksand.variable} ${inter.variable} antialiased`}
+        className={`${quicksand.variable} ${inter.variable} antialiased overflow-x-hidden scroll-smooth w-[100vw]`}
         style={{ background: '#FFFFFF' }}
       >
         <Header />
