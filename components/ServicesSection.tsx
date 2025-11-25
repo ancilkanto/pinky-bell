@@ -158,8 +158,8 @@ export default function ServicesSection() {
   return (
     <div className="bg-white py-[120px] max-[768px]:py-[100px] w-full" ref={sectionRef}>
       <div className="max-w-[1380px] mx-auto w-full px-0 max-[1400px]:px-8 max-[768px]:px-10">
-        <div className="services-section grid grid-cols-12 gap-10 items-start relative">
-          <div className="col-span-6 max-[768px]:col-span-12">
+        <div className="services-section grid grid-cols-12 gap-10 max-[1024px]:gap-0 items-start relative">
+          <div className="col-span-6 max-[768px]:col-span-12 ">
             <div ref={leftColumnRef} className="relative min-h-full">
               <div ref={leftBlockRef} className="services-left-block text-left pr-[95px]">
                 <SectionTitle
