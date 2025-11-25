@@ -65,7 +65,7 @@ export default function GoogleRatingWidget({
   };
 
   return (
-    <a href="https://www.google.com/search?q=pinky+bell+oman+reviews" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.google.com/search?q=pinky+bell+oman#lrd=0x3e91f833cd6ad139:0x56e5336357ee924b,1,,,," target="_blank" rel="noopener noreferrer">
       <div className={`google-rating-widget rounded-[20px] py-4 px-6 gap-4 border border-gray-400 inline-flex flex-row items-center justify-center max-[620px]:py-2 max-[620px]:px-4 max-[620px]:gap-2 ${className}`}>
         <div className="flex items-center gap-3">
           <Image
@@ -78,7 +78,7 @@ export default function GoogleRatingWidget({
         </div>
         
         <div className="flex flex-col items-left gap-2">
-          <span className="text-lg font-bold text-gray-900 max-[620px]:text-sm">Google Reviews</span>
+          <span className="text-lg font-bold text-gray-900 max-[620px]:text-sm">Google Rating</span>
           <div className="flex items-center gap-2">
             <span className="text-lg font-bold text-gray-900 max-[620px]:text-sm">{rating}</span>
             {renderStars()}

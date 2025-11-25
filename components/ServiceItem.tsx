@@ -29,7 +29,7 @@ export default function ServiceItem({
       data-service-image={imageUrl}
     >
       <div className="relative z-10">
-        <h3 className="text-[26px] font-quicksand font-semibold pink-text leading-[36px] mb-[30px]">
+        <h3 className="text-[26px] font-quicksand font-semibold pink-text leading-[36px] mb-[30px] max-[1024px]:text-[20px] max-[1024px]:leading-[28px] max-[768px]:pt-[20px]">
           {subTitle}
         </h3>
         {children && (
