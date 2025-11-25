@@ -74,3 +74,18 @@
   filter: brightness(100);
 }
 
+.btn-outline-pink-small {
+  /* Add your outline-pink button styles here */
+  padding: 10px 20px;
+  border: 1px solid #F8068E;
+  color: #F8068E;
+}
+.btn-outline-pink-small:hover {
+  /* Add your outline-pink button styles here */
+  color: #ffff;
+  background: #F8068E;
+}
+.btn-outline-pink-small:hover img {
+  filter: brightness(100);
+}
+

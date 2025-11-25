@@ -218,7 +218,7 @@ export default function ServicesSection() {
                     imageUrl={service.imageUrl}
                     className={`transition-opacity duration-1000 ${
                       index === activeIndex ? "opacity-100" : "opacity-20"
-                    } ${index === servicesData.length - 1 ? "max-[768px]:pb-0" : "max-[768px]:pb-[100px]"}`}
+                    } ${index === servicesData.length - 1 ? "max-[768px]:pb-0" : "max-[768px]:pb-[20px]"}`}
                   >
                     {service.description}
                   </ServiceItem>

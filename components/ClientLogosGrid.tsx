@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
+import Button from "./Button";
 
 type ClientLogo = {
   id: string;
@@ -27,6 +27,16 @@ const CLIENT_LOGOS: ClientLogo[] = [
   },
   { id: "benaa", name: "Benaa Oman", logo: "/clients/benaaoman.png" },
   { id: "eye", name: "Eye Log", logo: "/clients/eye-log.jpg" },
+  { id: "al-quram", name: "Al Quram", logo: "/clients/al-quram-logo.png" },
+  { id: "alshakima", name: "Al Shakima", logo: "/clients/alshakima-logo.jpg" },
+  { id: "athyab", name: "Athyab", logo: "/clients/athyab-logo.png" },
+  { id: "cakereels", name: "Cake Reels", logo: "/clients/cakereels-logo.png" },
+  { id: "eraya", name: "Eraya", logo: "/clients/eraya-logo.jpg" },
+  { id: "fastco", name: "Fastco", logo: "/clients/fastco.png" },
+  { id: "khimji", name: "Khimji", logo: "/clients/khimji-logo.jpg" },
+  { id: "munanoor", name: "Munanoor", logo: "/clients/munanoor-logo.jpg" },
+  { id: "newworld", name: "New World", logo: "/clients/newworld-logo-1.png" },
+  { id: "ourplanet", name: "Our Planet", logo: "/clients/ourplanet.png" },
 ];
 
 type ClientLogosGridProps = {
@@ -48,45 +58,46 @@ const Card = ({ logo }: { logo: ClientLogo }) => (
 );
 
 export default function ClientLogosGrid({ columns = 5 }: ClientLogosGridProps) {
-  const [isLargeScreen, setIsLargeScreen] = useState(true);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (typeof window === "undefined") return;
-      setIsLargeScreen(window.innerWidth > 1120);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const rows = isLargeScreen
-    ? CLIENT_LOGOS.reduce<ClientLogo[][]>((acc, logo, index) => {
-        if (index % columns === 0) acc.push([]);
-        acc[acc.length - 1].push(logo);
-        return acc;
-      }, [])
-    : [CLIENT_LOGOS];
-
   return (
-    <div className="flex flex-col gap-8 py-10 max-[768px]:gap-4 max-[768px]:py-4 ">
-      {rows.map((row, rowIndex) => {
-        return (
-          <div
-            key={`row-${rowIndex}`}
-            className={`flex flex-wrap gap-8 max-[768px]:gap-4 justify-center`}
-          >
-            {row.map((client) => (
-              <Card key={client.id} logo={client} />
-            ))}
+    <>
+      <style>{`
+        .client-logos-grid {
+          --columns: ${columns};
+          --grid-gap: 2.5rem;
+          grid-template-columns: repeat(var(--columns), minmax(150px, 200px));
+          gap: var(--grid-gap);
+          justify-content: center;
+        }
+        @media (max-width: 1280px) {
+          .client-logos-grid {
+            --columns: 4;
+          }
+        }
+        @media (max-width: 1024px) {
+          .client-logos-grid {
+            --columns: 3;
+          }
+        }
+        @media (max-width: 768px) {
+          .client-logos-grid {
+            --columns: 2;
+            --grid-gap: 1.5rem;
+          }
+        }
+      `}</style>
+      <div className="client-logos-grid grid py-10 max-[768px]:py-4 justify-center">
+        {CLIENT_LOGOS.map((client) => (
+          <Card key={client.id} logo={client} />
+        ))}
+        <div className="flex justify-center items-center">
+          <div className="text-center">
+            <Button btnStyle="outline-pink-small" href="#about" newTab={false}>
+              Discover More
+            </Button>
           </div>
-        );
-      })}
-    </div>
+        </div>
+      </div>
+    </>
   );
 }
 

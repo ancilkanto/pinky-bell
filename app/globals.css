@@ -33,7 +33,7 @@ body {
 }
 
 .highlight-bg {
-  background: linear-gradient(to right, #7F54A4, #D62A7B, #F47B39);background-image: linear-gradient(-79deg, #B30C6A 0%, #EC50A3 29%, #F8068E 44%, #F7088C 61%, #AC8A2B 100%);
+  background-image: linear-gradient(-79deg, #B30C6A 0%, #EC50A3 29%, #F8068E 44%, #F7088C 61%, #AC8A2B 100%);
 }
 
 .highlight-on-hover {
@@ -55,6 +55,13 @@ body {
   backdrop-filter: blur(0.2rem);
   color: var(--black);
   background: rgba(255,255,255,0.35);
+  
+}
+.fully-blur-background {
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  color: var(--black);
+  background: transparent;
   
 }
 header.blur-background{
@@ -161,4 +168,18 @@ nav.main-navigation a {
 }
 .minimal-button:hover::after{
   width: 0;
+}
+
+
+.rotate-360-animation{
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
 }

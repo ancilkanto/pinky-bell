@@ -280,13 +280,13 @@ export default function HeroAnimation() {
             </div>
         </div>
         <div className="relative z-10 pointer-events-none mx-auto flex max-w-[1385px] flex-col items-center gap-6 text-center text-black hero-banner-content-wrapper">
-            <h1 className="text-[75px] max-[1380px]:text-[50px] max-[1380px]:leading-[65px] max-[1080px]:text-[40px] max-[1080px]:leading-[55px] leading-[95px] display-flex flex-col items-center justify-center" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 400 }}>
+            <h1 className="text-[75px] max-[1380px]:text-[50px] max-[1380px]:leading-[65px] max-[1080px]:text-[40px] max-[1080px]:leading-[55px] max-[768px]:text-[30px] max-[768px]:leading-[40px] leading-[95px] display-flex flex-col items-center justify-center" style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 400 }}>
                 <span>Oman Web & Tech</span>
                 <br />
                 <span ref={textImageContainerRef} className="highlight-text">
                     Award Winning &nbsp;
                     <span ref={imageRef} className="inline-block relative">
-                        <Image src="/trophy.png" alt="Award" width={75} height={75} className="inline-block h-auto w-[75px] max-[1380px]:w-[60px] max-[768px]:w-[50px]" />
+                        <Image src="/trophy.png" alt="Award" width={75} height={75} className="inline-block h-auto w-[75px] max-[1380px]:w-[60px] max-[768px]:w-[40px]" />
                     </span>
                 </span>
                 <br />
